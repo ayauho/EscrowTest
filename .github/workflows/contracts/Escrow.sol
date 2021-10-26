@@ -15,7 +15,7 @@ contract Escrow {
 	function release(address payer, address payee) public payable {
 		bytes32 hash = keccak256(abi.encodePacked(payer, payee, msg.sender));
 		uint amount = Accounts[hash];
-		Accounts[hash] -= amount;
+		Accounts[hash] = 0;
 		payable(payee).transfer(amount);	
 	}
 }
