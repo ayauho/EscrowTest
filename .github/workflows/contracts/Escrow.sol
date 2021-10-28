@@ -18,4 +18,11 @@ contract Escrow {
 		Accounts[hash] = 0;
 		payable(payee).transfer(amount);	
 	}
+
+	function refund(address payer, address payee) public payable {
+		bytes32 hash = keccak256(abi.encodePacked(payer, payee, msg.sender));
+		uint amount = Accounts[hash];
+		Accounts[hash] = 0;
+		payable(payer).transfer(amount);			
+	}
 }

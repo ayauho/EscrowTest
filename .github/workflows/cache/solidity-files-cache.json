@@ -36,8 +36,8 @@
       ]
     },
     "/var/www/fundaria-test/sc/escrow/Olexiytest/.github/workflows/contracts/Escrow.sol": {
-      "lastModificationDate": 1635260456482,
-      "contentHash": "526b6a1e33c1a78582936f5d2a87ef54",
+      "lastModificationDate": 1635442859574,
+      "contentHash": "55a841384b08648f9b5f2468f18ea9a1",
       "sourceName": "contracts/Escrow.sol",
       "solcConfig": {
         "version": "0.8.4",

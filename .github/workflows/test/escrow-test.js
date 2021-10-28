@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Escrow", function () {
+describe("Escrow", async function () {
   it("Do everything", async function () {
     const Escrow = await hre.ethers.getContractFactory("Escrow");
     const escrow = await Escrow.deploy();
@@ -15,7 +15,7 @@ describe("Escrow", function () {
           value: 100
       })
     ).to.changeEtherBalances([payer, escrow], [-100, 100]);      
-
+   
     expect(
      await escrow.connect(acc1).release(payer.address,payee.address)
     ).to.changeEtherBalances([escrow, payee], [-100, 100]);  
@@ -23,14 +23,20 @@ describe("Escrow", function () {
     expect(
      await escrow.connect(releaser).release(acc1.address,payee.address)
     ).to.changeEtherBalances([escrow, payee], [-100, 100]);
-
+ 
     expect(
      await escrow.connect(releaser).release(payer.address,acc1.address)
     ).to.changeEtherBalances([escrow, payee], [-100, 100]);
 
     expect(
      await escrow.connect(releaser).release(payer.address,payee.address)
-    ).to.changeEtherBalances([escrow, payee], [-100, 100]);    
+    ).to.changeEtherBalances([escrow, payee], [-100, 100]);
 
-  });
+    expect(
+     await escrow.connect(releaser).refund(payer.address,payee.address)
+    ).to.changeEtherBalances([escrow, payer], [-100, 100]);
+    
+  });          
+
+
 });
