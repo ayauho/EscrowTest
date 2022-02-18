@@ -1,14 +1,10 @@
 # First Solidity Task
 
 ## Instructions
-* You should work on a private GitHub copy of this task
-* Clone the repository for local development
 * Setup your dev environment. It's recommended you use `yarn` as a package manager and `hardhat` as your Blockchain framework. It's ok to use truffle if you prefer it here.
 * Complete the escrow smart contract described below
 * Write Javascript unit tests for each function
-* Push your work to your private GitHub repository copy when done
 * Confirm that the [GitHub test workflow action](./.github/workflows/test.yml) runs your unit tests and they pass
-* This should probably take you less than 2 hours to complete
 
 ## Acceptance Criteria
 - The Escrow smart contract has the `depositFor()` and `release()` functions specified below and they work
