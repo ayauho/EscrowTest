@@ -30,7 +30,3 @@
 1. Transfers the tokens to the receiver address that was specified when the escrow was created with the `depositFor` function call
 2. `release` can only be called by the releaser account that was specified when the escrow was created with the `depositFor` function call
 3. Write tests for each of thes conditions.
-
-### `refund()` [don't write this yet]
-
-Don't write any refund functionality. If the initial task is followed by pair programming we will work on this while pair programming.
